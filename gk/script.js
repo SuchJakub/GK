@@ -46,17 +46,32 @@ function start()
     //Opis sceny 3D, położenie punktów w przestrzeni 3D w formacie X,Y,Z 
     let vertexPosition = [
       //1 pietro
-      -1,0,0, -0.5,1,0, 0,0,0, //1 od lewej
-      -0.5,1,0, 0,0,0, 0.5,1,0, 
-      0,0,0, 1,0,0, 0.5,1,0,   //3 od lewej
-      0.5,1,0, 1,0,0, 1.5,1,0, 
-
+      -0.1,0,0, -0.05,0.1,0, 0,0,0, //1 od lewej
+      -0.05,0.1,0, 0,0,0, 0.05,0.1,0, 
+      0,0,0, 0.1,0,0, 0.05,0.1,0,   //3 od lewej
+      0.05,0.1,0, 0.1,0,0, 0.15,0.1,0, 
+	  
 
       //2 pietro
+	  0.05,0.1,0, 0.1,0.2,0, 0.15,0.1,0,
+      0.1,0.2,0, 0.15,0.1,0, 0.2,0.2,0,
 
-      
-
-
+	  // 3 pietro
+	   0.1,0.2,0, 0.15,0.3,0, 0.2,0.2,0,
+	   0.05,0.3,0, 0.1,0.2,0,  0.15,0.3,0,
+	   0,0.2,0,  0.05,0.3,0, 0.1,0.2,0,
+	   -0.05,0.3,0,  0,0.2,0, 0.05,0.3,0,
+	  
+	  // 4 pietro
+	  -0.05,0.3,0,  0,0.4,0, 0.05,0.3,0,
+	  -0.1,0.4,0,  -0.05,0.3,0, 0,0.4,0,
+	  
+	  // 5 pietro
+	  -0.1,0.4,0,  -0.05,0.5,0, 0,0.4,0,
+	  -0.05,0.5,0,  0,0.4,0, 0.05,0.5,0,
+	   0,0.4,0,  0.05,0.5,0, 0.1,0.4,0,
+	  0.05,0.5,0,  0.1,0.4,0, 0.15,0.5,0
+	  
       /*//Top
         -1.0, +1.0, -1.0,  -1.0, +1.0, +1.0,  +1.0, +1.0, +1.0, //3 punkty po 3 składowe - X1,Y1,Z1, X2,Y2,Z2, X3,Y3,Z3 - 1 trójkąt
         -1.0, +1.0, -1.0,  +1.0, +1.0, +1.0,  +1.0, +1.0, -1.0,
@@ -81,7 +96,7 @@ function start()
       gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexPosition), gl.STATIC_DRAW);
       vertexPositionBuffer.itemSize = 3; //zdefiniowanie liczby współrzednych per wierzchołek
-      vertexPositionBuffer.numItems = 4; //Zdefinoiowanie liczby punktów w naszym buforze
+      vertexPositionBuffer.numItems = 16; //Zdefinoiowanie liczby punktów w naszym buforze
 
       //Macierze opisujące położenie wirtualnej kamery w przestrzenie 3D
   let aspect = gl.viewportWidth/gl.viewportHeight;
